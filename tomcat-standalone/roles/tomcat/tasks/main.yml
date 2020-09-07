@@ -52,4 +52,14 @@
 - name: wait for tomcat to start
   wait_for: port=8080
   
+- name: wait 5 sec
+  wait_for:
+    timeout: 5
+  delegate_to: localhost
+  
+- name: Stop tomcat
+  become: yes
+  become_method: sudo
+  command: /opt/apache-tomcat-7.0.61/bin/shutdown.sh
+  
   
