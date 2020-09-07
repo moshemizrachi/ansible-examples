@@ -57,26 +57,8 @@
     timeout: 5
   delegate_to: localhost
   
-- name: stop tomcat
+- name: restart tomcat
   become: yes
   become_method: sudo
-  command: /opt/apache-tomcat-7.0.61/bin/shutdown.sh
-  notify: stop tomcat
-
-- name: wait 5 sec
-  wait_for:
-    timeout: 5
-  delegate_to: localhost
- 
-- name: start tomcat
-  become: yes
-  become_method: sudo
-  command: /opt/apache-tomcat-7.0.61/bin/startup.sh
+  command: sudo /etc/init.d/tomcat restart
   notify: start tomcat
-  
-- name: wait 5 sec
-  wait_for:
-    timeout: 5
-  delegate_to: localhost
-  
-  
