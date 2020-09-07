@@ -61,5 +61,10 @@
   become: yes
   become_method: sudo
   command: /opt/apache-tomcat-7.0.61/bin/shutdown.sh
+- name: wait 5 sec
+  wait_for:
+    timeout: 5
+  delegate_to: localhost
+  
   
   
