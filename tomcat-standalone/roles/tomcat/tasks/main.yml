@@ -66,4 +66,6 @@
   delegate_to: localhost
 - name: Start Tomcat
   command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
+- name: Start Tomcat
+  command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
   
