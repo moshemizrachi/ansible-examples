@@ -66,6 +66,10 @@
   delegate_to: localhost
 - name: Start Tomcat
   command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
+- name: sleep for 5 seconds and continue with play
+  wait_for:
+    timeout: 5
+  delegate_to: localhost
 - name: Start Tomcat
   command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
   
