@@ -59,7 +59,8 @@
   
 - name: Stop Tomcat
   command: /opt/apache-tomcat-7.0.61/bin/shutdown.sh
-  become: True
+  remote_user: centos
+  become: yes
   become_method: sudo
  
 - name: sleep for 5 seconds and continue with play
@@ -69,8 +70,10 @@
 
 - name: Start Tomcat
   command: /opt/apache-tomcat-7.0.61/bin/startup.sh
-  become: True
+  remote_user: centos
+  become: yes
   become_method: sudo
+  
   
   
   
