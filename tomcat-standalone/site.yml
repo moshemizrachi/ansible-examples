@@ -14,8 +14,8 @@
     - name: Stop Tomcat
       command: sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
       become_method: sudo
-      become: true
+      #become: true
     - name: Start Tomcat
       command: sh /opt/apache-tomcat-7.0.61/bin/startup.sh
       become_method: sudo
-      become: true
+      #become: true
