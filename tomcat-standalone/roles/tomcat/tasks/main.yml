@@ -52,14 +52,18 @@
 - name: wait for tomcat to start
   wait_for: port=8080
   
-- name: sleep for 60 seconds and continue with play
+- name: sleep for 20 seconds and continue with play
   wait_for:
-    timeout: 60
+    timeout: 20
   delegate_to: localhost
   
 - name: Stop Tomcat
   command: sudo sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
       #become: true
+ - name: sleep for 10 seconds and continue with play
+  wait_for:
+    timeout: 10
+  delegate_to: localhost
 - name: Start Tomcat
   command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
       #become: true
