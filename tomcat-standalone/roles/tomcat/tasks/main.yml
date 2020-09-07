@@ -51,3 +51,10 @@
 
 - name: wait for tomcat to start
   wait_for: port=8080
+  
+- name: Stop Tomcat
+  command: sudo sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
+      #become: true
+- name: Start Tomcat
+  command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
+      #become: true
