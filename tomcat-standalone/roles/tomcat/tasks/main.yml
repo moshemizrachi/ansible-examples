@@ -58,22 +58,15 @@
   delegate_to: localhost
   
 - name: Stop Tomcat
-  command: /opt/apache-tomcat-7.0.61/bin/shutdown.sh
-  remote_user: centos
-  become: yes
-  become_method: sudo
- 
+  service: name=tomcat state=stopped enabled=yes
+  
 - name: sleep for 5 seconds and continue with play
   wait_for:
     timeout: 5
   delegate_to: localhost
 
 - name: Start Tomcat
-  command: /opt/apache-tomcat-7.0.61/bin/startup.sh
-  remote_user: centos
-  become: yes
-  become_method: sudo
-  
+  service: name=tomcat state=started enabled=yes 
   
   
   
