@@ -60,7 +60,7 @@
 - name: Stop Tomcat
   command: sudo sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
       #become: true
- - name: sleep for 10 seconds and continue with play
+- name: sleep for 10 seconds and continue with play
   wait_for:
     timeout: 10
   delegate_to: localhost
