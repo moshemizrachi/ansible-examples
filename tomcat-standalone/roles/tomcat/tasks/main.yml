@@ -59,13 +59,13 @@
   
 - name: Stop Tomcat
   command: sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
-  become: yes
-  become_method: su
+  become: True
+  become_method: sudo
 - name: sleep for 10 seconds and continue with play
   wait_for:
     timeout: 10
   delegate_to: localhost
 - name: Start Tomcat
   command: sh /opt/apache-tomcat-7.0.61/bin/startup.sh
-  become: yes
-  become_method: su
+  become: True
+  become_method: sudo
