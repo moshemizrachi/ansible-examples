@@ -9,3 +9,13 @@
   roles:
     - selinux
     - tomcat
+    
+  tasks:
+    - name: Stop Tomcat
+      command: sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
+      become: true
+      become_user: tomcat
+    - name: Start Tomcat
+      command: sh /opt/apache-tomcat-7.0.61/bin/startup.sh
+      become: true
+      become_user: tomcat
