@@ -58,7 +58,7 @@
   delegate_to: localhost
   
 - name: Stop Tomcat
-  command: sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
+  command: /opt/apache-tomcat-7.0.61/bin/shutdown.sh
   become: True
   become_method: sudo
  
@@ -68,7 +68,7 @@
   delegate_to: localhost
 
 - name: Start Tomcat
-  command: sh /opt/apache-tomcat-7.0.61/bin/startup.sh
+  command: /opt/apache-tomcat-7.0.61/bin/startup.sh
   become: True
   become_method: sudo
   
