@@ -51,22 +51,6 @@
 
 - name: wait for tomcat to start
   wait_for: port=8080
- 
-- name: sleep for 5 seconds and continue with play
-  wait_for:
-    timeout: 5
-  delegate_to: localhost
-  
-- name: Stop Tomcat
-  service: name=tomcat state=stopped enabled=yes
-  
-- name: sleep for 5 seconds and continue with play
-  wait_for:
-    timeout: 5
-  delegate_to: localhost
-
-- name: Start Tomcat
-  service: name=tomcat state=started enabled=yes 
-  
+  notify: restart tomcat
   
   
