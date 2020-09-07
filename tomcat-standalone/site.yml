@@ -10,10 +10,3 @@
     - selinux
     - tomcat
     
-  tasks:
-    - name: Stop Tomcat
-      command: sudo sh /opt/apache-tomcat-7.0.61/bin/shutdown.sh
-      #become: true
-    - name: Start Tomcat
-      command: sudo sh /opt/apache-tomcat-7.0.61/bin/startup.sh
-      #become: true
